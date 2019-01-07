@@ -12,24 +12,26 @@ Qualquer tomada de decisão é extremamente lenta e custosa, visto que, para ext
 É necessário o desenvolvimento de um sistema WEB para cadastro e controle das informações dos funcionários. 
 Para isso alguns requisitos devem ser seguidos:
 
-### Funcionários
+### Funcionários (id,nome,tipo,status,idfk_secretaria)
 - Cada funcionário só pode ter um cadastro ativo por vez.
 - O funcionário pode ser do tipo **Estatutário** ou **Comissionado**.
 - Quando um funcionário é cadastrado ele recebe o status **Ativo** quando exonerado ele recebe o status **Exonerado**.
 - Uma imagem de cada documento deve ser guardada junto do cadastro.
 
-### Salários
+### Documentos (id,imagem,idfk_Funcionarios)
+
+### Salários (id,salbase,gratificacao,desconto)
 - Todo funcionário possui um **Salário Base**.
 - Somente Estatutários possuem **Gratificação**.
 - Todo funcionários pode receber **Desconto** no salário.
 - O **Salário Líquido** é a soma do Salário Base mais Gratificação menos Descontos:
     > L = (SB + G) - D
 
-### Secretarias
+### Secretarias(id,nome)
 - Todo funcionário pertence a uma secretaria.
 - Uma secretaria pode ter muitos funcionários.
 
-### Usuários
+### Usuários(id,nome,tipo)
 - Usuários podem ser do tipo **Administrador**, **Gerente** ou **Operador**.
 - **Operadores** podem cadastrar e editar funcionários.
 - **Gerentes** podem todas as funções dos Operadores. Também podem cadastrar e editar **Secretarias** e visualizar relatórios.
